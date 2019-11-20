@@ -26,20 +26,24 @@ class App extends React.Component {
     if (this.state.op === "+") {
       this.setState({result: this.state.n1 + this.state.n2 });
       console.log(this.state.result);
+      return this.state.result
     }
     if (this.state.op === "x") {
       this.setState({result: this.state.n1 * this.state.n2 }); 
       console.log(this.state.result);
+      return this.state.result
     }
     if (this.state.op === "-") {
       this.setState({result: this.state.n1 - this.state.n2 });
       console.log(this.state.result);
+      return this.state.result
     }
     if (this.state.op === "÷") {
       this.setState({result: this.state.n1 / this.state.n2 });
       console.log(this.state.result);
+      return this.state.result
     }
-    return this.state.result
+
   }
 
   operatorChoice = (operator) => {
@@ -58,6 +62,7 @@ class App extends React.Component {
       n2: "",
       op: "",
       numberEntry: 1,
+      result: ""
     })
   }
 
@@ -65,7 +70,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="calc">
-        <input className="calcDisplay" readOnly="readonly"></input>
+        <input className="calcDisplay" readOnly="readonly" ></input>
         <button className="clear" onClick={() => this.clear()} >Clear</button>
         <button className="divide" onClick={() => this.operatorChoice("÷")} >÷</button>
         <button className="seven" onClick={() => this.numberButton(7)} >7</button>

@@ -74,7 +74,7 @@ class App extends React.Component {
     console.log(this.state.result);
     return (
       <div className="calc">
-        <p className="calcDisplay">{this.state.display}</p>
+        <p className="calcDisplay">{this.state.result}</p>
         <button className="clear" onClick={() => this.clear()} >Clear</button>
         <button className="divide" onClick={() => this.operatorChoice("÷")} >÷</button>
         <button className="seven" onClick={() => this.numberButton(7)} >7</button>
